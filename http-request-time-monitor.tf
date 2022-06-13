@@ -12,7 +12,5 @@ resource "datadog_monitor" "online_page_data_http_high_request_time" {
       critical          = each.value.threshold_critical
     }
 
-    require_full_window = false
-
     tags = ["env:${each.key}", "team:${var.team}", "service:${var.service}", "zone:${var.zone}"]
 }
